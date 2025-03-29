@@ -1,0 +1,4 @@
+baseURL = "https://golgo11.github.io/leeao-anthology/"  # 稍后替换为实际域名
+languageCode = "zh-CN"
+title = "李敖辑刊"
+theme = "mainroad"
