@@ -1,0 +1,16 @@
+backend:
+  name: git-gateway
+  branch: main  # 内容存储的分支
+media_folder: "static/uploads"  # 上传文件的存储路径
+public_folder: "/uploads"       # Hugo 中引用的公开路径
+publish_mode: editorial_workflow  # 启用草稿工作流
+
+collections:
+  - name: "posts"
+    label: "文章"
+    folder: "content/posts"
+    create: true
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "发布日期", name: "date", widget: "datetime" }
+      - { label: "正文", name: "body", widget: "markdown" }

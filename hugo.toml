@@ -1,0 +1,4 @@
+baseURL = "https://golgo11.github.io/leeao-anthology"  # 替换为你的 GitHub Pages 地址
+languageCode = "zh-CN"
+title = "李敖辑刊"
+theme = "mainroad"  
