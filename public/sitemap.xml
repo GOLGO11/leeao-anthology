@@ -2,10 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/leeao-anthology/categories/</loc>
+    <loc>https://golgo11.github.io/leeao-anthology/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/leeao-anthology/tags/</loc>
+    <loc>https://golgo11.github.io/leeao-anthology/tags/</loc>
   </url><url>
-    <loc>http://localhost:1313/leeao-anthology/</loc>
+    <loc>https://golgo11.github.io/leeao-anthology/</loc>
   </url>
 </urlset>

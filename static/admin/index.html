@@ -4,9 +4,28 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>内容管理系统</title>
+    <!-- 必须引入 Netlify Identity 脚本 -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
     <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+    <!-- 添加初始化逻辑 -->
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", (user) => {
+          if (!user) {
+            // 检测 URL 中的 invite_token 并自动处理
+            const searchParams = new URLSearchParams(window.location.search);
+            const inviteToken = searchParams.get("invite_token");
+            if (inviteToken) {
+              window.netlifyIdentity.on("login", () => {
+                window.location.href = "/admin/";
+              });
+              window.netlifyIdentity.signup({ invitation_token: inviteToken });
+            }
+          }
+        });
+      }
+    </script>
   </body>
 </html>
