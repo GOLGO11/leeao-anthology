@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on 李敖辑刊</title>
-    <link>https://golgo11.github.io/leeao-anthology/tags/</link>
+    <link>https://leeao-anthology.netlify.app/tags/</link>
     <description>Recent content in Tags on 李敖辑刊</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
-    <atom:link href="https://golgo11.github.io/leeao-anthology/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://leeao-anthology.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
