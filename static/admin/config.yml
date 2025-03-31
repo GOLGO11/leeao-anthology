@@ -14,4 +14,4 @@ collections:
       - { label: "标题", name: "title", widget: "string" }
       - { label: "发布日期", name: "date", widget: "datetime" }
       - { label: "正文", name: "body", widget: "markdown" }
-      - { label: "PDF 文件", name: "pdf", widget: "file" } # 添加 PDF 上传字段
+      - { label: "PDF 文件", name: "pdf", widget: "file", required: false } # 添加 PDF 上传字段
