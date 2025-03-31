@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on 李敖辑刊</title>
-    <link>https://leeao-anthology.netlify.app/posts/</link>
+    <link>https://leeaoweb.com/posts/</link>
     <description>Recent content in Posts on 李敖辑刊</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 31 Mar 2025 03:15:06 +0000</lastBuildDate>
-    <atom:link href="https://leeao-anthology.netlify.app/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://leeaoweb.com/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>李敖辑刊测试</title>
-      <link>https://leeao-anthology.netlify.app/posts/%E6%9D%8E%E6%95%96%E8%BE%91%E5%88%8A%E6%B5%8B%E8%AF%95/</link>
+      <link>https://leeaoweb.com/posts/%E6%9D%8E%E6%95%96%E8%BE%91%E5%88%8A%E6%B5%8B%E8%AF%95/</link>
       <pubDate>Mon, 31 Mar 2025 03:15:06 +0000</pubDate>
-      <guid>https://leeao-anthology.netlify.app/posts/%E6%9D%8E%E6%95%96%E8%BE%91%E5%88%8A%E6%B5%8B%E8%AF%95/</guid>
+      <guid>https://leeaoweb.com/posts/%E6%9D%8E%E6%95%96%E8%BE%91%E5%88%8A%E6%B5%8B%E8%AF%95/</guid>
       <description>&lt;p&gt;这是一个测试&lt;/p&gt;</description>
     </item>
     <item>
       <title>李敖辑刊第二集</title>
-      <link>https://leeao-anthology.netlify.app/posts/%E6%9D%8E%E6%95%96%E8%BE%91%E5%88%8A%E7%AC%AC%E4%BA%8C%E9%9B%86/</link>
+      <link>https://leeaoweb.com/posts/%E6%9D%8E%E6%95%96%E8%BE%91%E5%88%8A%E7%AC%AC%E4%BA%8C%E9%9B%86/</link>
       <pubDate>Sun, 30 Mar 2025 14:11:15 +0000</pubDate>
-      <guid>https://leeao-anthology.netlify.app/posts/%E6%9D%8E%E6%95%96%E8%BE%91%E5%88%8A%E7%AC%AC%E4%BA%8C%E9%9B%86/</guid>
-      <description>&lt;p&gt;下载地址：www.baidu.com&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://leeao-anthology.netlify.app/uploads/liao.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+      <guid>https://leeaoweb.com/posts/%E6%9D%8E%E6%95%96%E8%BE%91%E5%88%8A%E7%AC%AC%E4%BA%8C%E9%9B%86/</guid>
+      <description>&lt;p&gt;下载地址：www.baidu.com&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://leeaoweb.com/uploads/liao.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>李敖辑刊第一集</title>
-      <link>https://leeao-anthology.netlify.app/posts/%E6%9D%8E%E6%95%96%E8%BE%91%E5%88%8A%E7%AC%AC%E4%B8%80%E9%9B%86/</link>
+      <link>https://leeaoweb.com/posts/%E6%9D%8E%E6%95%96%E8%BE%91%E5%88%8A%E7%AC%AC%E4%B8%80%E9%9B%86/</link>
       <pubDate>Sun, 30 Mar 2025 12:48:57 +0000</pubDate>
-      <guid>https://leeao-anthology.netlify.app/posts/%E6%9D%8E%E6%95%96%E8%BE%91%E5%88%8A%E7%AC%AC%E4%B8%80%E9%9B%86/</guid>
+      <guid>https://leeaoweb.com/posts/%E6%9D%8E%E6%95%96%E8%BE%91%E5%88%8A%E7%AC%AC%E4%B8%80%E9%9B%86/</guid>
       <description>&lt;p&gt;下载地址：www.baidu.com&lt;/p&gt;</description>
     </item>
   </channel>

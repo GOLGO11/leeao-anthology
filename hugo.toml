@@ -1,4 +1,4 @@
-baseURL = "https://leeao-anthology.netlify.app/"  # 替换为你的 GitHub Pages 地址
+baseURL = "https://leeaoweb.com/"
 languageCode = "zh-CN"
 title = "李敖辑刊"
 theme = "mainroad"  
