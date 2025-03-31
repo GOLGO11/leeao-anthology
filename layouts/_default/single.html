@@ -14,10 +14,6 @@
 		{{- partial "post_toc.html" . -}}
 		<div class="content post__content clearfix">
 			{{ .Content }}
-			<!-- 调试所有参数 -->
-			<p>调试: 所有参数 = {{ .Params | jsonify }}</p>
-			<!-- PDF 逻辑 -->
-			<p>调试: PDF 值 = {{ .Params.pdf | default "未定义" }}</p>
 			{{- if .Params.pdf }}
 			<div class="post__pdf">
 				<p><a href="{{ .Params.pdf | absURL }}" target="_blank" rel="noopener noreferrer">下载 PDF 文件</a></p>
