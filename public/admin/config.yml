@@ -13,5 +13,5 @@ collections:
     fields:
       - { label: "标题", name: "title", widget: "string" }
       - { label: "发布日期", name: "date", widget: "datetime" }
-      - { label: "正文", name: "body", widget: "markdown" }
+      - { label: "正文", name: "body", widget: "editor" }
       - { label: "PDF 文件", name: "pdf", widget: "file" } # 添加 PDF 上传字段
