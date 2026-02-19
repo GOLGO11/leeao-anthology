@@ -24,6 +24,11 @@
 				<p><a href="{{ .Params.excel_file | absURL }}" target="_blank" rel="noopener noreferrer">下载 Excel 文件</a></p>
 			</div>
 			{{- end }}
+			{{- if .Params.apk_file }}
+			<div class="post__apk">
+				<p><a href="{{ .Params.apk_file | absURL }}" target="_blank" rel="noopener noreferrer">下载 APK 文件</a></p>
+			</div>
+			{{- end }}
 		</div>
 		{{- if .Params.tags }}
 		<footer class="post__footer">

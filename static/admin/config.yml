@@ -16,3 +16,4 @@ collections:
       - { label: "正文", name: "body", widget: "markdown" }
       - { label: "PDF 文件", name: "pdf", widget: "file", required: false } # 添加 PDF 上传字段  
       - { label: "Excel文件", name: excel_file, widget: "file", allowed_extensions: ["xlsx", "xls"], required: false } # 添加 Excel 上传字段
+      - { label: "APK文件", name: apk_file, widget: "file", allowed_extensions: ["apk"], required: false } # 添加 APK 上传字段
