@@ -382,6 +382,17 @@ html:not(.dark) body::before {
   box-shadow: 0 18px 34px rgba(52, 43, 32, 0.1);
 }
 
+.project-card:focus-visible,
+.leeao-variant-toggle:focus-visible,
+.leeao-footer__links a:focus-visible,
+.leeao-footer__button:focus-visible,
+.main-menu a:focus-visible,
+.main-menu button:focus-visible,
+.main-menu label:focus-visible {
+  outline: 3px solid rgba(159, 47, 47, 0.55);
+  outline-offset: 4px;
+}
+
 .project-card__tag {
   align-self: flex-start;
   margin-bottom: 0.65rem;

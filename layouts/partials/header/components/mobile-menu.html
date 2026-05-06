@@ -56,11 +56,12 @@
   {{ range .Site.Menus.main }}
     {{ if .HasChildren }}
       {{ range .Children }}
+        {{ $isExternal := or (strings.HasPrefix .URL "http:" ) (strings.HasPrefix .URL "https:" ) }}
         <div class="px-2">
           <a
             href="{{ .URL }}"
-            {{ with or .Name .Pre }}aria-label="{{ . }}"{{ end }}
-            {{ if or (strings.HasPrefix .URL "http:" ) (strings.HasPrefix .URL "https:" ) }}
+            {{ with or .Name .Pre }}aria-label="{{ . | plainify }}{{ if $isExternal }}，新窗口{{ end }}"{{ end }}
+            {{ if $isExternal }}
               target="_blank"
             {{ end }}
             class="flex items-center gap-3 rounded-md px-2 py-2 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">

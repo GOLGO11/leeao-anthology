@@ -4,10 +4,10 @@
   {{ range $projects }}
     {{ $projectCount = add $projectCount (len .items) }}
   {{ end }}
-  <article class="project-museum">
+  <article class="project-museum" aria-labelledby="project-museum-title">
     <header class="project-museum__hero">
       <p class="project-museum__eyebrow">Lee Ao Digital Museum</p>
-      <h1>{{ .Title | emojify }}</h1>
+      <h1 id="project-museum-title">{{ .Title | emojify }}</h1>
       <div class="project-museum__intro">
         {{ .Content }}
       </div>
@@ -19,9 +19,10 @@
 
     <div class="project-gallery">
       {{ range $projects }}
-        <section class="project-group" aria-labelledby="{{ .title | anchorize }}">
+        {{ $groupID := printf "project-group-%s" (.title | anchorize) }}
+        <section class="project-group" aria-labelledby="{{ $groupID }}">
           <div class="project-group__head">
-            <h2 id="{{ .title | anchorize }}">{{ .title }}</h2>
+            <h2 id="{{ $groupID }}">{{ .title }}</h2>
             <p>{{ .description }}</p>
           </div>
 
@@ -31,6 +32,7 @@
               <a
                 class="project-card"
                 href="{{ .url }}"
+                aria-label="打开{{ .name }}{{ if $isExternal }}，新窗口{{ end }}"
                 {{ if $isExternal }}target="_blank" rel="noopener noreferrer"{{ end }}>
                 <span class="project-card__tag">{{ .tag }}</span>
                 <h3>{{ .name }}</h3>
