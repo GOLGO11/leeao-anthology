@@ -125,7 +125,11 @@ function buildIndex() {
 }
 
 function normalize(text) {
-  return String(text || "").toLowerCase().replace(/\s+/g, "");
+  var value = String(text || "");
+  if (window.LeeaoVariant && window.LeeaoVariant.toSimplified) {
+    value = window.LeeaoVariant.toSimplified(value);
+  }
+  return value.toLowerCase().replace(/\s+/g, "");
 }
 
 function matchScore(item, query) {
@@ -200,6 +204,9 @@ function executeQuery(term) {
     .join("");
 
   hasResults = results.length > 0;
+  if (window.LeeaoVariant && window.LeeaoVariant.apply) {
+    window.LeeaoVariant.apply(output);
+  }
   if (hasResults) {
     first = output.firstChild.firstElementChild;
     last = output.lastChild.firstElementChild;

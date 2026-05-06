@@ -98,14 +98,13 @@
 {{ end }}
 
 {{ define "mobile-footer-components" }}
-  {{ if or hugo.IsMultilingual .Site.Params.enableA11y }}
-    <div
-      class="flex flex-wrap items-center [&_span]:text-2xl [&_.translation_button_.icon]:text-4xl! [&_.translation_button_span]:text-base! [&_.translation_.menuhide_span]:text-sm! gap-x-6 ps-2 mt-8 pt-8 border-t bf-border-color">
-      {{ partial "header/components/translations.html" . }}
+  <div
+    class="flex flex-wrap items-center [&_span]:text-2xl [&_.translation_button_.icon]:text-4xl! [&_.translation_button_span]:text-base! [&_.translation_.menuhide_span]:text-sm! gap-x-6 ps-2 mt-8 pt-8 border-t bf-border-color">
+    {{ partial "header/components/translations.html" . }}
+    {{ partial "variant-toggle.html" . }}
 
-      {{ if .Site.Params.enableA11y | default false }}
-        {{ partial "header/components/a11y.html" (dict "prefix" "mobile-menu-") }}
-      {{ end }}
-    </div>
-  {{ end }}
+    {{ if .Site.Params.enableA11y | default false }}
+      {{ partial "header/components/a11y.html" (dict "prefix" "mobile-menu-") }}
+    {{ end }}
+  </div>
 {{ end }}
