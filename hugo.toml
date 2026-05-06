@@ -39,7 +39,7 @@ showScrollToTop = true
 
 [params.homepage]
 layout = "page"
-showRecent = true
+showRecent = false
 showRecentItems = 10
 showMoreLink = true
 showMoreLinkDest = "/posts/"
@@ -70,12 +70,7 @@ title = "李敖数字博物馆"
 displayName = "简体中文"
 isoCode = "zh-CN"
 dateFormat = "2006-01-02"
-description = "李敖研究资料、集刊、图录与相关数字项目入口。"
-
-[[menus.main]]
-name = "文章"
-pageRef = "posts"
-weight = 10
+description = "李敖数字项目、资料入口、互动工具与历史镜像汇总。"
 
 [[menus.main]]
 name = "项目入口"
@@ -84,7 +79,7 @@ weight = 20
 
 [[menus.main]]
 name = "李敖研究资料集刊"
-url = "https://leeaoweb.com/"
+url = "/posts/"
 parent = "projects"
 weight = 10
 

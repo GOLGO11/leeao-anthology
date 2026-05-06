@@ -1,0 +1,45 @@
+{{ define "main" }}
+  {{ $projects := hugo.Data.projects.groups }}
+  {{ $projectCount := 0 }}
+  {{ range $projects }}
+    {{ $projectCount = add $projectCount (len .items) }}
+  {{ end }}
+  <article class="project-museum">
+    <header class="project-museum__hero">
+      <p class="project-museum__eyebrow">Lee Ao Digital Museum</p>
+      <h1>{{ .Title | emojify }}</h1>
+      <div class="project-museum__intro">
+        {{ .Content }}
+      </div>
+      <div class="project-museum__summary" aria-label="项目概览">
+        <span>{{ len $projects }} 个分类</span>
+        <span>{{ $projectCount }} 个入口</span>
+      </div>
+    </header>
+
+    <div class="project-gallery">
+      {{ range $projects }}
+        <section class="project-group" aria-labelledby="{{ .title | anchorize }}">
+          <div class="project-group__head">
+            <h2 id="{{ .title | anchorize }}">{{ .title }}</h2>
+            <p>{{ .description }}</p>
+          </div>
+
+          <div class="project-grid">
+            {{ range .items }}
+              {{ $isExternal := or (strings.HasPrefix .url "http://") (strings.HasPrefix .url "https://") }}
+              <a
+                class="project-card"
+                href="{{ .url }}"
+                {{ if $isExternal }}target="_blank" rel="noopener noreferrer"{{ end }}>
+                <span class="project-card__tag">{{ .tag }}</span>
+                <h3>{{ .name }}</h3>
+                <p>{{ .description }}</p>
+              </a>
+            {{ end }}
+          </div>
+        </section>
+      {{ end }}
+    </div>
+  </article>
+{{ end }}
