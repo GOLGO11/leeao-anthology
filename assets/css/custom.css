@@ -134,6 +134,19 @@ html:not(.dark) body::before {
   background: rgba(255, 253, 248, 0.96) !important;
 }
 
+.prose strong {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 0.35rem;
+  padding: 0.28rem 0.7rem;
+  border: 1px solid rgba(159, 47, 47, 0.2);
+  border-radius: 999px;
+  background: rgba(159, 47, 47, 0.08);
+  color: #7b2a25;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  font-size: 0.92rem;
+}
+
 .prose {
   max-width: 68rem;
 }
@@ -221,6 +234,138 @@ html:not(.dark) body::before {
   border-top: 1px solid rgba(74, 59, 43, 0.12);
 }
 
+.leeao-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: 68rem;
+  margin: 0 auto;
+  padding-top: 1.15rem;
+  color: #5a5045;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+}
+
+.leeao-footer__maker {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.leeao-footer__maker strong {
+  color: #7b2a25;
+  font-weight: 800;
+}
+
+.leeao-footer__links {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.leeao-footer__links a,
+.leeao-footer__button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.28rem 0.68rem;
+  border: 1px solid rgba(159, 47, 47, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 253, 248, 0.72);
+  color: #7b2a25;
+  font-size: 0.92rem;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.leeao-footer__links a:hover,
+.leeao-footer__button:hover {
+  border-color: rgba(159, 47, 47, 0.34);
+  background: rgba(159, 47, 47, 0.08);
+}
+
+.leeao-feedback__toggle {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.leeao-feedback {
+  display: none;
+}
+
+.leeao-feedback__toggle:checked ~ .leeao-feedback {
+  position: fixed;
+  inset: 0;
+  z-index: 12000;
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
+}
+
+.leeao-feedback__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(24, 20, 16, 0.46);
+  backdrop-filter: blur(5px);
+}
+
+.leeao-feedback__dialog {
+  position: relative;
+  width: min(100%, 22rem);
+  padding: 1.35rem;
+  border: 1px solid rgba(74, 59, 43, 0.14);
+  border-radius: 8px;
+  background: #fffdf8;
+  box-shadow: 0 28px 70px rgba(24, 20, 16, 0.28);
+  text-align: center;
+}
+
+.leeao-feedback__dialog h2 {
+  margin: 0 0 0.55rem;
+  color: #211d18;
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.leeao-feedback__dialog p {
+  margin: 0 auto 1rem;
+  color: #5a5045;
+  font-size: 0.94rem;
+  line-height: 1.65;
+}
+
+.leeao-feedback__dialog img {
+  display: block;
+  width: min(100%, 16rem);
+  height: auto;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.leeao-feedback__close {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.65rem;
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  border: 1px solid rgba(74, 59, 43, 0.12);
+  border-radius: 999px;
+  color: #211d18;
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.leeao-feedback__close:hover {
+  background: rgba(159, 47, 47, 0.08);
+}
+
 @media (min-width: 900px) {
   section:has(> .article-link--simple) {
     display: grid;
@@ -248,7 +393,38 @@ html:not(.dark) body::before {
   }
 
   .main-menu {
+    z-index: 5000 !important;
     margin-top: 0.5rem;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    isolation: auto;
+  }
+
+  .main-menu:has(#mobile-menu-toggle:checked) {
+    z-index: 10000 !important;
+  }
+
+  .main-menu [role="dialog"][aria-modal="true"] {
+    z-index: 10050 !important;
+    padding-top: 5.25rem !important;
+    background: #fffdf8 !important;
+  }
+
+  .main-menu [role="dialog"][aria-modal="true"] label[for="mobile-menu-toggle"] {
+    z-index: 10100 !important;
+  }
+
+  .main-menu [role="dialog"][aria-modal="true"] nav {
+    padding-top: 0.75rem;
+  }
+
+  .main-menu [role="dialog"][aria-modal="true"] nav > div > a span.text-2xl {
+    font-size: 1.55rem;
+    line-height: 1.3;
+  }
+
+  .main-menu [role="dialog"][aria-modal="true"] nav > div > a {
+    padding-block: 0.35rem;
   }
 
   .main-menu > a:first-of-type {
@@ -278,5 +454,14 @@ html:not(.dark) body::before {
 
   .article-link--simple {
     padding: 1rem;
+  }
+
+  .leeao-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .leeao-footer__links {
+    flex-wrap: wrap;
   }
 }

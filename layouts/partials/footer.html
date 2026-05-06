@@ -1,0 +1,36 @@
+<footer id="site-footer" class="py-10 print:hidden">
+  <div class="leeao-footer">
+    <p class="leeao-footer__maker">&copy; 2026 <strong>山樱</strong></p>
+
+    <nav class="leeao-footer__links" aria-label="站点页脚">
+      <a href="/thanks/">特别鸣谢</a>
+
+      <input class="leeao-feedback__toggle" type="checkbox" id="leeao-feedback-toggle" />
+      <label class="leeao-footer__button" for="leeao-feedback-toggle">故障反馈</label>
+
+      <div class="leeao-feedback" aria-hidden="true">
+        <label class="leeao-feedback__backdrop" for="leeao-feedback-toggle" aria-label="关闭故障反馈"></label>
+        <div class="leeao-feedback__dialog" role="dialog" aria-modal="true" aria-labelledby="leeao-feedback-title">
+          <label class="leeao-feedback__close" for="leeao-feedback-toggle" aria-label="关闭">×</label>
+          <h2 id="leeao-feedback-title">故障反馈</h2>
+          <p>遇到链接失效、内容错误或显示异常，可扫码加入 QQ 群反馈。</p>
+          <img src="/images/qq-group.jpg" alt="故障反馈 QQ 群二维码" loading="lazy" />
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  {{ if not .Site.Params.disableImageZoom | default true }}
+    <script>
+      mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+        margin: 24,
+        background: "rgba(0,0,0,0.5)",
+        scrollOffset: 0,
+      });
+    </script>
+  {{ end }}
+
+  {{ if templates.Exists "partials/extend-footer.html" }}
+    {{ partialCached "extend-footer.html" . }}
+  {{ end }}
+</footer>
