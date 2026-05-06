@@ -113,14 +113,54 @@ function fetchJSON(path, callback) {
 function buildIndex() {
   if (indexed || indexing || !wrapper) return;
   indexing = true;
+  var scope = getSearchScope();
+
+  if (scope === "projects") {
+    indexData = buildProjectIndex();
+    indexed = true;
+    indexing = false;
+    if (input.value) executeQuery(input.value);
+    return;
+  }
+
   var baseURL = wrapper.getAttribute("data-url").replace(/\/?$/, "/");
   fetchJSON(baseURL + "index.json", function (data) {
     indexData = data.filter(function (item) {
+      if (scope === "articles") return item.type === "posts";
       return item.type !== "tags" && item.type !== "categories" && item.type !== "authors" && item.type !== "series";
     });
     indexed = true;
     indexing = false;
     if (input.value) executeQuery(input.value);
+  });
+}
+
+function getSearchScope() {
+  return wrapper ? wrapper.getAttribute("data-search-scope") || "all" : "all";
+}
+
+function buildProjectIndex() {
+  return Array.prototype.slice.call(document.querySelectorAll(".project-card")).map(function (card) {
+    var group = card.closest(".project-group");
+    var title = card.querySelector("h3");
+    var tag = card.querySelector(".project-card__tag");
+    var summary = card.querySelector("p");
+    var section = group ? group.querySelector(".project-group__head h2") : null;
+    var href = card.getAttribute("href") || "";
+    var external = /^https?:\/\//i.test(href);
+
+    return {
+      title: title ? title.textContent.trim() : "",
+      section: section ? section.textContent.trim() : "",
+      summary: summary ? summary.textContent.trim() : "",
+      content: [
+        tag ? tag.textContent.trim() : "",
+        summary ? summary.textContent.trim() : ""
+      ].join(" "),
+      permalink: external ? "" : href,
+      externalUrl: external ? href : "",
+      type: "projects"
+    };
   });
 }
 
@@ -177,6 +217,15 @@ function executeQuery(term) {
       return b.score - a.score;
     })
     .slice(0, 12);
+
+  if (!results.length) {
+    output.innerHTML = `<li class="px-3 py-3 text-sm text-neutral-500 dark:text-neutral-400">没有找到匹配结果</li>`;
+    hasResults = false;
+    if (window.LeeaoVariant && window.LeeaoVariant.apply) {
+      window.LeeaoVariant.apply(output);
+    }
+    return;
+  }
 
   output.innerHTML = results
     .map(function (result) {
