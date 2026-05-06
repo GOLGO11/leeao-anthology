@@ -1,7 +1,161 @@
 baseURL = "https://leeaoweb.com/"
 locale = "zh-CN"
-title = "李敖研究资料集刊"
-theme = "mainroad"
+defaultContentLanguage = "zh-CN"
+title = "李敖数字博物馆"
+theme = "blowfish"
+enableRobotsTXT = true
+summaryLength = 30
 
-[Params]
-customCSS = ["css/project-nav.css"]
+[pagination]
+pagerSize = 10
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
+[taxonomies]
+tag = "tags"
+category = "categories"
+author = "authors"
+series = "series"
+
+[params]
+colorScheme = "one-light"
+defaultAppearance = "light"
+autoSwitchAppearance = false
+mainSections = ["posts"]
+enableSearch = true
+enableCodeCopy = false
+disableTextInHeader = false
+
+[params.header]
+layout = "basic"
+
+[params.footer]
+showMenu = false
+showCopyright = true
+showThemeAttribution = false
+showAppearanceSwitcher = false
+showScrollToTop = true
+
+[params.homepage]
+layout = "page"
+showRecent = true
+showRecentItems = 10
+showMoreLink = true
+showMoreLinkDest = "/posts/"
+cardView = false
+
+[params.article]
+showDate = true
+showAuthor = false
+showReadingTime = false
+showWordCount = false
+showTableOfContents = false
+showPagination = true
+showTaxonomies = false
+
+[params.list]
+showSummary = true
+groupByYear = false
+cardView = false
+constrainItemsWidth = false
+
+[languages.zh-CN]
+locale = "zh-CN"
+label = "简体中文"
+weight = 1
+title = "李敖数字博物馆"
+
+[languages.zh-CN.params]
+displayName = "简体中文"
+isoCode = "zh-CN"
+dateFormat = "2006-01-02"
+description = "李敖研究资料、集刊、图录与相关数字项目入口。"
+
+[[menus.main]]
+name = "文章"
+pageRef = "posts"
+weight = 10
+
+[[menus.main]]
+name = "项目入口"
+identifier = "projects"
+weight = 20
+
+[[menus.main]]
+name = "李敖研究资料集刊"
+url = "https://leeaoweb.com/"
+parent = "projects"
+weight = 10
+
+[[menus.main]]
+name = "交互式年表"
+url = "https://life.leeaoweb.com/"
+parent = "projects"
+weight = 20
+
+[[menus.main]]
+name = "交互式人物关系图"
+url = "https://relation.leeaoweb.com/"
+parent = "projects"
+weight = 30
+
+[[menus.main]]
+name = "大李敖全集安卓阅读器"
+url = "https://github.com/GOLGO11/lee-ao/releases"
+parent = "projects"
+weight = 40
+
+[[menus.main]]
+name = "AI李敖海外版"
+url = "https://ai.leeaoweb.com/"
+parent = "projects"
+weight = 50
+
+[[menus.main]]
+name = "1997 官网"
+url = "https://1997.leeaoweb.com/"
+parent = "projects"
+weight = 60
+
+[[menus.main]]
+name = "2000 大选"
+url = "https://leeaodaxuan.42web.io/"
+parent = "projects"
+weight = 70
+
+[[menus.main]]
+name = "与敖同行 APP"
+url = "https://github.com/GOLGO11/with-leeao"
+parent = "projects"
+weight = 80
+
+[[menus.main]]
+name = "李敖研究网（资源网盘）"
+url = "https://leeao.net/"
+parent = "projects"
+weight = 90
+
+[[menus.main]]
+name = "大李敖全集在线版"
+url = "https://books.leeao.net/"
+parent = "projects"
+weight = 100
+
+[[menus.main]]
+name = "2000 官网"
+url = "https://web.leeao.net/"
+parent = "projects"
+weight = 110
+
+[[menus.main]]
+name = "AI李敖国内版"
+url = "https://ai.leeao.net/"
+parent = "projects"
+weight = 120
+
+[[menus.main]]
+name = "旧李敖研究网"
+url = "https://study.leeao.net/"
+parent = "projects"
+weight = 130
