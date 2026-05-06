@@ -5,7 +5,7 @@ groups:
       - name: "李敖研究资料集刊"
         url: "/posts/"
         tag: "资料"
-        description: "现有集刊与研究文章暂存入口，后续可迁移到独立二级域名。"
+        description: "集刊与研究文章入口。"
       - name: "李敖研究网（资源网盘）"
         url: "https://leeao.net/"
         tag: "网盘"
