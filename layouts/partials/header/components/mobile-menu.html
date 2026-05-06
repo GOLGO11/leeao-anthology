@@ -1,4 +1,6 @@
 <div class="flex items-center h-14 gap-4">
+  {{ partial "variant-toggle.html" . }}
+
   {{ if .Site.Params.enableSearch | default false }}
     <button
       id="search-button-mobile"
@@ -98,13 +100,14 @@
 {{ end }}
 
 {{ define "mobile-footer-components" }}
-  <div
-    class="flex flex-wrap items-center [&_span]:text-2xl [&_.translation_button_.icon]:text-4xl! [&_.translation_button_span]:text-base! [&_.translation_.menuhide_span]:text-sm! gap-x-6 ps-2 mt-8 pt-8 border-t bf-border-color">
-    {{ partial "header/components/translations.html" . }}
-    {{ partial "variant-toggle.html" . }}
+  {{ if or hugo.IsMultilingual .Site.Params.enableA11y }}
+    <div
+      class="flex flex-wrap items-center [&_span]:text-2xl [&_.translation_button_.icon]:text-4xl! [&_.translation_button_span]:text-base! [&_.translation_.menuhide_span]:text-sm! gap-x-6 ps-2 mt-8 pt-8 border-t bf-border-color">
+      {{ partial "header/components/translations.html" . }}
 
-    {{ if .Site.Params.enableA11y | default false }}
-      {{ partial "header/components/a11y.html" (dict "prefix" "mobile-menu-") }}
-    {{ end }}
-  </div>
+      {{ if .Site.Params.enableA11y | default false }}
+        {{ partial "header/components/a11y.html" (dict "prefix" "mobile-menu-") }}
+      {{ end }}
+    </div>
+  {{ end }}
 {{ end }}
