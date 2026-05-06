@@ -376,15 +376,6 @@ html:not(.dark) body::before {
   transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
 }
 
-.project-card::before {
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 4px;
-  border-radius: 8px 0 0 8px;
-  content: "";
-  background: #9f2f2f;
-}
-
 .project-card:hover {
   transform: translateY(-2px);
   border-color: rgba(159, 47, 47, 0.32);
