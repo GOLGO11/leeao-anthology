@@ -1,0 +1,14 @@
+{{- with hugo.Data.project_nav.links }}
+<nav class="project-nav" aria-label="李敖项目入口">
+	<div class="project-nav__inner">
+		<span class="project-nav__label">项目导航</span>
+		<ul class="project-nav__list">
+			{{- range . }}
+			<li class="project-nav__item">
+				<a class="project-nav__link" href="{{ .url }}"{{ if or (hasPrefix .url "http://") (hasPrefix .url "https://") }} target="_blank" rel="noopener noreferrer"{{ end }}>{{ .name }}</a>
+			</li>
+			{{- end }}
+		</ul>
+	</div>
+</nav>
+{{- end }}

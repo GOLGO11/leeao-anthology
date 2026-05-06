@@ -1,4 +1,7 @@
 baseURL = "https://leeaoweb.com/"
-languageCode = "zh-CN"
+locale = "zh-CN"
 title = "李敖研究资料集刊"
-theme = "mainroad"  
+theme = "mainroad"
+
+[Params]
+customCSS = ["css/project-nav.css"]
