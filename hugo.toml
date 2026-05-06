@@ -150,8 +150,8 @@ parent = "projects"
 weight = 120
 
 [[menus.main]]
-name = "AI李敖国内版"
-url = "https://ai.leeao.net/"
+name = "AI李敖海内版"
+url = "https://www.coze.cn/store/agent/7472290159925575695"
 parent = "projects"
 weight = 130
 
