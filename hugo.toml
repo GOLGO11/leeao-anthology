@@ -144,7 +144,7 @@ parent = "projects"
 weight = 20
 
 [[menus.main]]
-name = "李敖地理记忆地图"
+name = "地理记忆地图"
 url = "https://map.leeaoweb.com/"
 parent = "projects"
 weight = 30

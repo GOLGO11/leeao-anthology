@@ -10,7 +10,7 @@ groups:
         url: "https://relation.leeaoweb.com/"
         tag: "关系"
         description: "以关系图方式查看人物、事件与文本之间的关联。"
-      - name: "李敖地理记忆地图"
+      - name: "地理记忆地图"
         url: "https://map.leeaoweb.com/"
         tag: "地图"
         description: "以地理记忆地图方式进入李敖相关地点与资料。"
