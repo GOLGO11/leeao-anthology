@@ -1,19 +1,11 @@
 {{ define "main" }}
   {{ $projects := hugo.Data.projects.groups }}
-  {{ $projectCount := 0 }}
-  {{ range $projects }}
-    {{ $projectCount = add $projectCount (len .items) }}
-  {{ end }}
   <article class="project-museum" aria-labelledby="project-museum-title">
     <header class="project-museum__hero">
       <p class="project-museum__eyebrow">Lee Ao Digital Museum</p>
       <h1 id="project-museum-title">{{ .Title | emojify }}</h1>
       <div class="project-museum__intro">
         {{ .Content }}
-      </div>
-      <div class="project-museum__summary" aria-label="项目概览">
-        <span>{{ len $projects }} 个分类</span>
-        <span>{{ $projectCount }} 个入口</span>
       </div>
     </header>
 

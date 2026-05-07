@@ -1,4 +1,20 @@
 groups:
+  - title: "互动项目"
+    description: "以时间、人物关系等方式进入李敖资料。"
+    items:
+      - name: "交互式年表"
+        url: "https://life.leeaoweb.com/"
+        tag: "年表"
+        description: "按时间线梳理李敖生平与相关事件。"
+      - name: "交互式人物关系图"
+        url: "https://relation.leeaoweb.com/"
+        tag: "关系"
+        description: "以关系图方式查看人物、事件与文本之间的关联。"
+      - name: "李敖地理记忆地图"
+        url: "https://map.leeaoweb.com/"
+        tag: "地图"
+        description: "以地理记忆地图方式进入李敖相关地点与资料。"
+
   - title: "研究资料"
     description: "集刊、丛书、书目图录与研究资料入口。"
     items:
@@ -42,18 +58,6 @@ groups:
         url: "https://github.com/GOLGO11/lee-ao/releases"
         tag: "安卓"
         description: "安卓端全集阅读器发布页。"
-
-  - title: "互动项目"
-    description: "以时间、人物关系等方式进入李敖资料。"
-    items:
-      - name: "交互式年表"
-        url: "https://life.leeaoweb.com/"
-        tag: "年表"
-        description: "按时间线梳理李敖生平与相关事件。"
-      - name: "交互式人物关系图"
-        url: "https://relation.leeaoweb.com/"
-        tag: "关系"
-        description: "以关系图方式查看人物、事件与文本之间的关联。"
 
   - title: "AI 李敖"
     description: "面向不同访问环境的 AI 李敖项目入口。"

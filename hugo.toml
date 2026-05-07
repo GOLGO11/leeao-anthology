@@ -81,100 +81,106 @@ weight = 20
 name = "李敖研究资料集刊"
 url = "/posts/"
 parent = "projects"
-weight = 10
+weight = 40
 
 [[menus.main]]
 name = "图片库"
 url = "https://tw.leeao.net:51025/5.%E5%9B%BE%E7%89%87"
 parent = "projects"
-weight = 20
+weight = 50
 
 [[menus.main]]
 name = "视频库"
 url = "https://tw.leeao.net:51025/2.%E6%9D%8E%E6%95%96%E8%A7%86%E9%A2%91%E5%A4%A7%E5%85%A8"
 parent = "projects"
-weight = 30
+weight = 60
 
 [[menus.main]]
 name = "音频库"
 url = "https://tw.leeao.net:51025/3.%E6%9D%8E%E6%95%96%E9%9F%B3%E9%A2%91%E5%A4%A7%E5%85%A8"
 parent = "projects"
-weight = 40
+weight = 70
 
 [[menus.main]]
 name = "李敖研究网（资源网盘）"
 url = "https://leeao.net/"
 parent = "projects"
-weight = 50
+weight = 80
 
 [[menus.main]]
 name = "旧李敖研究网"
 url = "https://study.leeao.net/"
 parent = "projects"
-weight = 60
+weight = 90
 
 [[menus.main]]
 name = "大李敖全集在线版"
 url = "https://books.leeao.net/"
 parent = "projects"
-weight = 70
+weight = 100
 
 [[menus.main]]
 name = "大李敖全集电子书"
 url = "https://github.com/GOLGO11/leeao"
 parent = "projects"
-weight = 80
+weight = 110
 
 [[menus.main]]
 name = "大李敖全集安卓阅读器"
 url = "https://github.com/GOLGO11/lee-ao/releases"
 parent = "projects"
-weight = 90
+weight = 120
 
 [[menus.main]]
 name = "交互式年表"
 url = "https://life.leeaoweb.com/"
 parent = "projects"
-weight = 100
+weight = 10
 
 [[menus.main]]
 name = "交互式人物关系图"
 url = "https://relation.leeaoweb.com/"
 parent = "projects"
-weight = 110
+weight = 20
+
+[[menus.main]]
+name = "李敖地理记忆地图"
+url = "https://map.leeaoweb.com/"
+parent = "projects"
+weight = 30
 
 [[menus.main]]
 name = "AI李敖海外版"
 url = "https://ai.leeaoweb.com/"
 parent = "projects"
-weight = 120
+weight = 130
 
 [[menus.main]]
 name = "AI李敖海内版"
 url = "https://www.coze.cn/store/agent/7472290159925575695"
 parent = "projects"
-weight = 130
+weight = 140
 
 [[menus.main]]
 name = "1997 官网"
 url = "https://1997.leeaoweb.com/"
 parent = "projects"
-weight = 140
+weight = 150
 
 [[menus.main]]
 name = "2000 官网"
 url = "https://web.leeao.net/"
 parent = "projects"
-weight = 150
+weight = 160
 
 [[menus.main]]
 name = "2000 大选"
 url = "https://leeaodaxuan.42web.io/"
 parent = "projects"
-weight = 160
+weight = 170
 
 [[menus.main]]
 name = "与敖同行 APP"
 url = "https://github.com/GOLGO11/with-leeao"
 parent = "projects"
-weight = 170
+weight = 180
