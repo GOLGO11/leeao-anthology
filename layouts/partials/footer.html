@@ -5,10 +5,25 @@
     <nav class="leeao-footer__links" aria-label="站点页脚">
       <a href="/thanks/">特别鸣谢</a>
 
+      {{ if .IsHome }}
+        <input class="leeao-feedback__toggle" type="checkbox" id="leeao-spark-toggle" />
+        <label class="leeao-footer__button" for="leeao-spark-toggle">加入群聊</label>
+
+        <div class="leeao-feedback leeao-feedback--spark" aria-hidden="true">
+          <label class="leeao-feedback__backdrop" for="leeao-spark-toggle" aria-label="关闭加入群聊"></label>
+          <div class="leeao-feedback__dialog" role="dialog" aria-modal="true" aria-labelledby="leeao-spark-title">
+            <label class="leeao-feedback__close" for="leeao-spark-toggle" aria-label="关闭">×</label>
+            <h2 id="leeao-spark-title">加入群聊</h2>
+            <p>扫码加入李敖星火群聊。</p>
+            <img src="/images/%E6%9D%8E%E6%95%96%E6%98%9F%E7%81%AB.jpg" alt="李敖星火群聊二维码" loading="lazy" />
+          </div>
+        </div>
+      {{ end }}
+
       <input class="leeao-feedback__toggle" type="checkbox" id="leeao-feedback-toggle" />
       <label class="leeao-footer__button" for="leeao-feedback-toggle">故障反馈</label>
 
-      <div class="leeao-feedback" aria-hidden="true">
+      <div class="leeao-feedback leeao-feedback--feedback" aria-hidden="true">
         <label class="leeao-feedback__backdrop" for="leeao-feedback-toggle" aria-label="关闭故障反馈"></label>
         <div class="leeao-feedback__dialog" role="dialog" aria-modal="true" aria-labelledby="leeao-feedback-title">
           <label class="leeao-feedback__close" for="leeao-feedback-toggle" aria-label="关闭">×</label>
