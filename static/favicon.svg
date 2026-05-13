@@ -1,3 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <text y=".9em" font-size="86">🌸</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="樱花">
+  <rect width="512" height="512" rx="112" fill="#fff7f1"/>
+  <circle cx="256" cy="256" r="210" fill="#fffdf8"/>
+  <g transform="translate(256 256)">
+    <path d="M0-38C-42-112 18-165 70-114 121-65 80 9 15 24Z" fill="#f4a9b8" stroke="#b53a4d" stroke-width="11" stroke-linejoin="round"/>
+    <path d="M0-38C-42-112 18-165 70-114 121-65 80 9 15 24Z" fill="#f6b8c5" stroke="#b53a4d" stroke-width="11" stroke-linejoin="round" transform="rotate(72)"/>
+    <path d="M0-38C-42-112 18-165 70-114 121-65 80 9 15 24Z" fill="#f4a9b8" stroke="#b53a4d" stroke-width="11" stroke-linejoin="round" transform="rotate(144)"/>
+    <path d="M0-38C-42-112 18-165 70-114 121-65 80 9 15 24Z" fill="#f6b8c5" stroke="#b53a4d" stroke-width="11" stroke-linejoin="round" transform="rotate(216)"/>
+    <path d="M0-38C-42-112 18-165 70-114 121-65 80 9 15 24Z" fill="#f4a9b8" stroke="#b53a4d" stroke-width="11" stroke-linejoin="round" transform="rotate(288)"/>
+    <circle r="34" fill="#9f2f2f"/>
+    <circle r="13" fill="#f7d98a"/>
+  </g>
 </svg>
