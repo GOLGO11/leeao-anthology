@@ -1,0 +1,115 @@
+{{- $siteURL := site.Home.Permalink -}}
+{{- $siteTitle := site.Title | plainify -}}
+{{- $siteDescription := site.Params.description | default site.Language.Params.description | default $siteTitle -}}
+{{- $language := site.Language.Locale | default "zh-CN" -}}
+{{- $publisherID := printf "%s#publisher" $siteURL -}}
+{{- $websiteID := printf "%s#website" $siteURL -}}
+{{- $publisher := dict
+  "@type" "Organization"
+  "@id" $publisherID
+  "name" (site.Params.Author.name | default "山樱")
+  "url" $siteURL
+  "logo" (dict "@type" "ImageObject" "url" ("favicon.svg" | absURL))
+-}}
+{{- $website := dict
+  "@type" "WebSite"
+  "@id" $websiteID
+  "name" $siteTitle
+  "url" $siteURL
+  "description" $siteDescription
+  "inLanguage" $language
+  "publisher" (dict "@id" $publisherID)
+-}}
+{{- $about := slice (dict "@type" "Person" "name" "李敖") (dict "@type" "Thing" "name" "李敖研究") -}}
+{{- $graph := slice $publisher $website -}}
+
+{{- if .IsHome -}}
+  {{- $items := slice -}}
+  {{- $position := 1 -}}
+  {{- range hugo.Data.projects.groups -}}
+    {{- range .items -}}
+      {{- $url := .url -}}
+      {{- if not (or (strings.HasPrefix $url "http://") (strings.HasPrefix $url "https://")) -}}
+        {{- $url = $url | absURL -}}
+      {{- end -}}
+      {{- $items = $items | append (dict
+        "@type" "ListItem"
+        "position" $position
+        "name" .name
+        "description" .description
+        "url" $url
+      ) -}}
+      {{- $position = add $position 1 -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $page := dict
+    "@type" "CollectionPage"
+    "@id" (printf "%s#webpage" .Permalink)
+    "url" .Permalink
+    "name" (.Title | plainify)
+    "description" (.Description | default $siteDescription)
+    "isPartOf" (dict "@id" $websiteID)
+    "inLanguage" $language
+    "about" $about
+    "publisher" (dict "@id" $publisherID)
+    "mainEntity" (dict
+      "@type" "ItemList"
+      "name" "李敖数字项目入口"
+      "numberOfItems" (len $items)
+      "itemListElement" $items
+    )
+  -}}
+  {{- $graph = $graph | append $page -}}
+{{- else -}}
+  {{- $description := .Description | default (.Summary | plainify | htmlUnescape) | default $siteDescription -}}
+  {{- $pageType := cond .IsPage "Article" "CollectionPage" -}}
+  {{- $page := dict
+    "@type" $pageType
+    "@id" (printf "%s#webpage" .Permalink)
+    "url" .Permalink
+    "name" (.Title | plainify)
+    "headline" (.Title | plainify)
+    "description" $description
+    "isPartOf" (dict "@id" $websiteID)
+    "inLanguage" $language
+    "about" $about
+    "publisher" (dict "@id" $publisherID)
+  -}}
+  {{- if .IsPage -}}
+    {{- $page = merge $page (dict
+      "author" (dict "@type" "Organization" "name" (site.Params.Author.name | default "山樱"))
+      "mainEntityOfPage" (dict "@id" (printf "%s#webpage" .Permalink))
+      "wordCount" .WordCount
+    ) -}}
+    {{- with .Date -}}
+      {{- if not .IsZero -}}
+        {{- $page = merge $page (dict "datePublished" (.Format "2006-01-02T15:04:05-07:00")) -}}
+      {{- end -}}
+    {{- end -}}
+    {{- with .Lastmod -}}
+      {{- if not .IsZero -}}
+        {{- $page = merge $page (dict "dateModified" (.Format "2006-01-02T15:04:05-07:00")) -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- $crumbs := slice (dict "@type" "ListItem" "position" 1 "name" $siteTitle "item" $siteURL) -}}
+  {{- $crumbPosition := 2 -}}
+  {{- with site.GetPage .Section -}}
+    {{- if and (not $.IsSection) (ne .RelPermalink "/") -}}
+      {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $crumbPosition "name" (.Title | plainify) "item" .Permalink) -}}
+      {{- $crumbPosition = add $crumbPosition 1 -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $crumbPosition "name" (.Title | plainify) "item" .Permalink) -}}
+  {{- $breadcrumb := dict
+    "@type" "BreadcrumbList"
+    "@id" (printf "%s#breadcrumb" .Permalink)
+    "itemListElement" $crumbs
+  -}}
+  {{- $graph = $graph | append $page $breadcrumb -}}
+{{- end -}}
+
+<script type="application/ld+json">
+{{- dict "@context" "https://schema.org" "@graph" $graph | jsonify (dict "indent" "  ") | safeJS -}}
+</script>

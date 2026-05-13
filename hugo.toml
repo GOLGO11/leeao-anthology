@@ -4,7 +4,14 @@ defaultContentLanguage = "zh-CN"
 title = "李敖数字博物馆"
 theme = "blowfish"
 enableRobotsTXT = true
+enableGitInfo = true
 summaryLength = 30
+disableKinds = ["taxonomy", "term"]
+
+[sitemap]
+changefreq = "weekly"
+priority = 0.5
+filename = "sitemap.xml"
 
 [pagination]
 pagerSize = 10
@@ -26,6 +33,12 @@ mainSections = ["posts"]
 enableSearch = true
 enableCodeCopy = false
 disableTextInHeader = false
+description = "李敖数字博物馆汇总李敖研究资料集刊、大李敖全集、交互式年表、人物关系图、地理记忆地图、图片库、视频库、音频库、AI 李敖与历史网站镜像。"
+robots = "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+images = ["/uploads/liao.jpeg"]
+
+[params.author]
+name = "山樱"
 
 [params.header]
 layout = "basic"
@@ -70,7 +83,7 @@ title = "李敖数字博物馆"
 displayName = "简体中文"
 isoCode = "zh-CN"
 dateFormat = "2006-01-02"
-description = "李敖数字项目、资料入口、互动工具与历史镜像汇总。"
+description = "李敖数字博物馆汇总李敖研究资料集刊、大李敖全集、交互式年表、人物关系图、地理记忆地图、图片库、视频库、音频库、AI 李敖与历史网站镜像。"
 
 [[menus.main]]
 name = "项目入口"
