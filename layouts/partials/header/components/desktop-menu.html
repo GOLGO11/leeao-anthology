@@ -10,8 +10,6 @@
     {{ partial "header/components/a11y.html" (dict "prefix" "desktop-") }}
   {{ end }}
 
-  {{ partial "variant-toggle.html" . }}
-
   {{ if .Site.Params.enableSearch | default false }}
     <button
       id="search-button"

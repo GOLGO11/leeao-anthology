@@ -2,7 +2,3 @@
   localStorage.removeItem("appearance");
   document.documentElement.classList.remove("dark");
 </script>
-{{ with resources.Get "js/variant.js" }}
-  {{ $variantJS := . | resources.Minify | resources.Fingerprint "sha512" }}
-  <script defer src="{{ $variantJS.RelPermalink }}" integrity="{{ $variantJS.Data.Integrity }}"></script>
-{{ end }}

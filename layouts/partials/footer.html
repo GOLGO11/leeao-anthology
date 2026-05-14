@@ -4,9 +4,7 @@
     <p class="leeao-footer__maker">&copy; 2026 <strong>{{ if $isHant }}山櫻{{ else }}山樱{{ end }}</strong></p>
 
     <nav class="leeao-footer__links" aria-label="{{ if $isHant }}網站頁尾{{ else }}站点页脚{{ end }}">
-      {{ if not $isHant }}
-        <a href="/thanks/">特别鸣谢</a>
-      {{ end }}
+      <a href="{{ if $isHant }}/zh-hant/thanks/{{ else }}/thanks/{{ end }}">{{ if $isHant }}特別鳴謝{{ else }}特别鸣谢{{ end }}</a>
 
       {{ if .IsHome }}
         <input class="leeao-feedback__toggle" type="checkbox" id="leeao-spark-toggle" />
