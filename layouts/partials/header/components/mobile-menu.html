@@ -1,4 +1,6 @@
 <div class="flex items-center h-14 gap-4">
+  {{ partial "variant-toggle.html" . }}
+
   {{ if .Site.Params.enableSearch | default false }}
     <button
       id="search-button-mobile"
@@ -42,7 +44,6 @@
         {{ partial "icon.html" "xmark" }}
       </label>
       <nav class="mx-auto max-w-md space-y-6">
-        {{ template "mobile-language-switcher" . }}
         {{ template "mobile-main-menu" . }}
         {{ template "mobile-subnavigation" . }}
         {{ template "mobile-footer-components" . }}
@@ -50,22 +51,6 @@
     </div>
   {{ end }}
 </div>
-
-{{ define "mobile-language-switcher" }}
-  {{ if .IsTranslated }}
-    <section class="mobile-language-switcher" aria-label="{{ if eq (lower .Site.Language.Locale) "zh-hant" }}語言切換{{ else }}语言切换{{ end }}">
-      <p>{{ if eq (lower .Site.Language.Locale) "zh-hant" }}語言{{ else }}语言{{ end }}</p>
-      <div>
-        {{ range .AllTranslations }}
-          {{ $isCurrent := eq (lower .Language.Locale) (lower site.Language.Locale) }}
-          <a href="{{ .RelPermalink }}" aria-current="{{ if $isCurrent }}page{{ else }}false{{ end }}">
-            {{ .Language.Params.displayName | emojify }}
-          </a>
-        {{ end }}
-      </div>
-    </section>
-  {{ end }}
-{{ end }}
 
 {{ define "mobile-main-menu" }}
   {{ with .Site.Menus.main }}

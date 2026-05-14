@@ -1,8 +1,15 @@
-<button
-  type="button"
+{{ $isHant := eq (lower .Site.Language.Locale) "zh-hant" }}
+{{ $targetLocale := cond $isHant "zh-cn" "zh-hant" }}
+{{ $targetURL := cond $isHant "/" "/zh-hant/" }}
+{{ range .AllTranslations }}
+  {{ if eq (lower .Language.Locale) $targetLocale }}
+    {{ $targetURL = .RelPermalink }}
+  {{ end }}
+{{ end }}
+<a
   class="leeao-variant-toggle"
-  data-variant-toggle
-  aria-label="{{ if eq (lower .Site.Language.Locale) "zh-hant" }}簡繁切換{{ else }}简繁切换{{ end }}"
-  title="{{ if eq (lower .Site.Language.Locale) "zh-hant" }}簡繁切換{{ else }}简繁切换{{ end }}">
-  繁
-</button>
+  href="{{ $targetURL }}"
+  aria-label="{{ if $isHant }}切換到簡體中文{{ else }}切换到繁体中文{{ end }}"
+  title="{{ if $isHant }}切換到簡體中文{{ else }}切换到繁体中文{{ end }}">
+  {{ if $isHant }}简{{ else }}繁{{ end }}
+</a>
