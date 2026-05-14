@@ -1,5 +1,11 @@
 {{ define "main" }}
+  {{ $isHant := eq (lower .Site.Language.Locale) "zh-hant" }}
   {{ $projects := hugo.Data.projects.groups }}
+  {{ if $isHant }}
+    {{ $projects = hugo.Data.projects_hant.groups }}
+  {{ end }}
+  {{ $openLabel := cond $isHant "開啟" "打开" }}
+  {{ $newWindowLabel := cond $isHant "，新視窗" "，新窗口" }}
   <article class="project-museum" aria-labelledby="project-museum-title">
     <header class="project-museum__hero">
       <p class="project-museum__eyebrow">Lee Ao Digital Museum</p>
@@ -24,7 +30,7 @@
               <a
                 class="project-card"
                 href="{{ .url }}"
-                aria-label="打开{{ .name }}{{ if $isExternal }}，新窗口{{ end }}"
+                aria-label="{{ $openLabel }}{{ .name }}{{ if $isExternal }}{{ $newWindowLabel }}{{ end }}"
                 {{ if $isExternal }}target="_blank" rel="noopener noreferrer"{{ end }}>
                 <span class="project-card__tag">{{ .tag }}</span>
                 <h3>{{ .name }}</h3>

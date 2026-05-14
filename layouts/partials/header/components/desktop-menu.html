@@ -74,12 +74,13 @@
           <div class="flex flex-col space-y-3">
             {{ range .Children }}
               {{ $isExternal := or (strings.HasPrefix .URL "http:" ) (strings.HasPrefix .URL "https:" ) }}
+              {{ $newWindowLabel := cond (eq (lower site.Language.Locale) "zh-hant") "，新視窗" "，新窗口" }}
               <a
                 href="{{ .URL }}"
                 {{ if $isExternal }}
                   target="_blank"
                 {{ end }}
-                {{ with or .Name .Pre }}aria-label="{{ . | plainify }}{{ if $isExternal }}，新窗口{{ end }}"{{ end }}
+                {{ with or .Name .Pre }}aria-label="{{ . | plainify }}{{ if $isExternal }}{{ $newWindowLabel }}{{ end }}"{{ end }}
                 class="flex items-center bf-icon-color-hover">
                 {{ if .Pre }}
                   <span {{ if and .Pre .Name }}class="mr-1"{{ end }}>
@@ -97,13 +98,14 @@
     </div>
   {{ else }}
     {{ $isExternal := or (strings.HasPrefix .URL "http:" ) (strings.HasPrefix .URL "https:" ) }}
+    {{ $newWindowLabel := cond (eq (lower site.Language.Locale) "zh-hant") "，新視窗" "，新窗口" }}
     <a
       href="{{ .URL }}"
       {{ if $isExternal }}
         target="_blank"
       {{ end }}
       class="flex items-center bf-icon-color-hover"
-      {{ with or .Name .Pre }}aria-label="{{ . | plainify }}{{ if $isExternal }}，新窗口{{ end }}"{{ end }}
+      {{ with or .Name .Pre }}aria-label="{{ . | plainify }}{{ if $isExternal }}{{ $newWindowLabel }}{{ end }}"{{ end }}
       title="{{ .Title }}">
       {{ if .Pre }}
         <span {{ if and .Pre .Name }}class="mr-1"{{ end }}>

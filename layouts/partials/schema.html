@@ -4,10 +4,18 @@
 {{- $language := site.Language.Locale | default "zh-CN" -}}
 {{- $publisherID := printf "%s#publisher" $siteURL -}}
 {{- $websiteID := printf "%s#website" $siteURL -}}
+{{- $isHant := eq (lower site.Language.Locale) "zh-hant" -}}
+{{- $publisherName := cond $isHant "山櫻" (site.Params.Author.name | default "山樱") -}}
+{{- $projectData := hugo.Data.projects -}}
+{{- if $isHant -}}
+  {{- $projectData = hugo.Data.projects_hant -}}
+{{- end -}}
+{{- $itemListName := cond $isHant "李敖數字項目入口" "李敖数字项目入口" -}}
+{{- $aboutThing := cond $isHant "李敖研究" "李敖研究" -}}
 {{- $publisher := dict
   "@type" "Organization"
   "@id" $publisherID
-  "name" (site.Params.Author.name | default "山樱")
+  "name" $publisherName
   "url" $siteURL
   "logo" (dict "@type" "ImageObject" "url" ("favicon.svg" | absURL))
 -}}
@@ -20,13 +28,13 @@
   "inLanguage" $language
   "publisher" (dict "@id" $publisherID)
 -}}
-{{- $about := slice (dict "@type" "Person" "name" "李敖") (dict "@type" "Thing" "name" "李敖研究") -}}
+{{- $about := slice (dict "@type" "Person" "name" "李敖") (dict "@type" "Thing" "name" $aboutThing) -}}
 {{- $graph := slice $publisher $website -}}
 
 {{- if .IsHome -}}
   {{- $items := slice -}}
   {{- $position := 1 -}}
-  {{- range hugo.Data.projects.groups -}}
+  {{- range $projectData.groups -}}
     {{- range .items -}}
       {{- $url := .url -}}
       {{- if not (or (strings.HasPrefix $url "http://") (strings.HasPrefix $url "https://")) -}}
@@ -54,7 +62,7 @@
     "publisher" (dict "@id" $publisherID)
     "mainEntity" (dict
       "@type" "ItemList"
-      "name" "李敖数字项目入口"
+      "name" $itemListName
       "numberOfItems" (len $items)
       "itemListElement" $items
     )
@@ -77,7 +85,7 @@
   -}}
   {{- if .IsPage -}}
     {{- $page = merge $page (dict
-      "author" (dict "@type" "Organization" "name" (site.Params.Author.name | default "山樱"))
+      "author" (dict "@type" "Organization" "name" $publisherName)
       "mainEntityOfPage" (dict "@id" (printf "%s#webpage" .Permalink))
       "wordCount" .WordCount
     ) -}}

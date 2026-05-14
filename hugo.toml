@@ -85,6 +85,135 @@ isoCode = "zh-CN"
 dateFormat = "2006-01-02"
 description = "李敖数字博物馆汇总李敖研究资料集刊、大李敖全集、交互式年表、人物关系图、地理记忆地图、图片库、视频库、音频库、AI 李敖与历史网站镜像。"
 
+[languages.zh-Hant]
+locale = "zh-Hant"
+label = "繁體中文"
+weight = 2
+title = "李敖數字博物館"
+contentDir = "content/zh-hant"
+
+[languages.zh-Hant.params]
+displayName = "繁體中文"
+isoCode = "zh-Hant"
+dateFormat = "2006-01-02"
+description = "李敖數字博物館彙總李敖研究資料集刊、大李敖全集、互動式年表、人物關係圖、地理記憶地圖、圖片庫、視頻庫、音頻庫、AI 李敖與歷史網站鏡像。"
+
+[languages.zh-Hant.params.author]
+name = "山櫻"
+
+[[languages.zh-Hant.menus.main]]
+name = "項目入口"
+identifier = "projects"
+weight = 20
+
+[[languages.zh-Hant.menus.main]]
+name = "互動式年表"
+url = "https://life.leeaoweb.com/"
+parent = "projects"
+weight = 10
+
+[[languages.zh-Hant.menus.main]]
+name = "互動式人物關係圖"
+url = "https://relation.leeaoweb.com/"
+parent = "projects"
+weight = 20
+
+[[languages.zh-Hant.menus.main]]
+name = "地理記憶地圖"
+url = "https://map.leeaoweb.com/"
+parent = "projects"
+weight = 30
+
+[[languages.zh-Hant.menus.main]]
+name = "李敖研究資料集刊"
+url = "/posts/"
+parent = "projects"
+weight = 40
+
+[[languages.zh-Hant.menus.main]]
+name = "圖片庫"
+url = "https://tw.leeao.net:51025/5.%E5%9B%BE%E7%89%87"
+parent = "projects"
+weight = 50
+
+[[languages.zh-Hant.menus.main]]
+name = "視頻庫"
+url = "https://tw.leeao.net:51025/2.%E6%9D%8E%E6%95%96%E8%A7%86%E9%A2%91%E5%A4%A7%E5%85%A8"
+parent = "projects"
+weight = 60
+
+[[languages.zh-Hant.menus.main]]
+name = "音頻庫"
+url = "https://tw.leeao.net:51025/3.%E6%9D%8E%E6%95%96%E9%9F%B3%E9%A2%91%E5%A4%A7%E5%85%A8"
+parent = "projects"
+weight = 70
+
+[[languages.zh-Hant.menus.main]]
+name = "李敖研究網（資源網盤）"
+url = "https://leeao.net/"
+parent = "projects"
+weight = 80
+
+[[languages.zh-Hant.menus.main]]
+name = "舊李敖研究網"
+url = "https://study.leeao.net/"
+parent = "projects"
+weight = 90
+
+[[languages.zh-Hant.menus.main]]
+name = "大李敖全集在線版"
+url = "https://books.leeao.net/"
+parent = "projects"
+weight = 100
+
+[[languages.zh-Hant.menus.main]]
+name = "大李敖全集電子書"
+url = "https://github.com/GOLGO11/leeao"
+parent = "projects"
+weight = 110
+
+[[languages.zh-Hant.menus.main]]
+name = "大李敖全集安卓閱讀器"
+url = "https://github.com/GOLGO11/lee-ao/releases"
+parent = "projects"
+weight = 120
+
+[[languages.zh-Hant.menus.main]]
+name = "AI李敖海外版"
+url = "https://ai.leeaoweb.com/"
+parent = "projects"
+weight = 130
+
+[[languages.zh-Hant.menus.main]]
+name = "AI李敖海內版"
+url = "https://www.coze.cn/store/agent/7472290159925575695"
+parent = "projects"
+weight = 140
+
+[[languages.zh-Hant.menus.main]]
+name = "1997 官網"
+url = "https://1997.leeaoweb.com/"
+parent = "projects"
+weight = 150
+
+[[languages.zh-Hant.menus.main]]
+name = "2000 官網"
+url = "https://web.leeao.net/"
+parent = "projects"
+weight = 160
+
+[[languages.zh-Hant.menus.main]]
+name = "2000 大選"
+url = "https://leeaodaxuan.42web.io/"
+parent = "projects"
+weight = 170
+
+[[languages.zh-Hant.menus.main]]
+name = "與敖同行 APP"
+url = "https://github.com/GOLGO11/with-leeao"
+parent = "projects"
+weight = 180
+
 [[menus.main]]
 name = "项目入口"
 identifier = "projects"

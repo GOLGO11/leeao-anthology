@@ -6,6 +6,10 @@
   var attrOriginals = new WeakMap();
   var originalTitle = document.title;
 
+  function defaultVariant() {
+    return document.documentElement.lang === "zh-Hant" ? TRADITIONAL : SIMPLIFIED;
+  }
+
   var phraseMap = {
     "李敖数字博物馆": "李敖數字博物館",
     "李敖研究资料集刊": "李敖研究資料集刊",
@@ -417,14 +421,14 @@
     buttons.forEach(function (button) {
       var isTraditional = variant === TRADITIONAL;
       button.textContent = isTraditional ? "简" : "繁";
-      button.setAttribute("aria-label", isTraditional ? "切换到简体" : "切换到繁体");
-      button.setAttribute("title", isTraditional ? "切换到简体" : "切换到繁体");
+      button.setAttribute("aria-label", isTraditional ? "切換到簡體" : "切换到繁体");
+      button.setAttribute("title", isTraditional ? "切換到簡體" : "切换到繁体");
       button.setAttribute("aria-pressed", String(isTraditional));
     });
   }
 
   function applyVariant(root) {
-    var variant = localStorage.getItem(STORAGE_KEY) || SIMPLIFIED;
+    var variant = localStorage.getItem(STORAGE_KEY) || defaultVariant();
     var scope = root || document.body;
     if (!scope) return;
 
@@ -448,7 +452,7 @@
   }
 
   function toggleVariant() {
-    var current = localStorage.getItem(STORAGE_KEY) || SIMPLIFIED;
+    var current = localStorage.getItem(STORAGE_KEY) || defaultVariant();
     localStorage.setItem(STORAGE_KEY, current === TRADITIONAL ? SIMPLIFIED : TRADITIONAL);
     applyVariant(document.body);
   }
@@ -469,7 +473,7 @@
     toTraditional: toTraditional,
     toSimplified: toSimplified,
     get: function () {
-      return localStorage.getItem(STORAGE_KEY) || SIMPLIFIED;
+      return localStorage.getItem(STORAGE_KEY) || defaultVariant();
     }
   };
 })();

@@ -1,35 +1,38 @@
 <footer id="site-footer" class="py-10 print:hidden">
+  {{ $isHant := eq (lower .Site.Language.Locale) "zh-hant" }}
   <div class="leeao-footer">
-    <p class="leeao-footer__maker">&copy; 2026 <strong>山樱</strong></p>
+    <p class="leeao-footer__maker">&copy; 2026 <strong>{{ if $isHant }}山櫻{{ else }}山樱{{ end }}</strong></p>
 
-    <nav class="leeao-footer__links" aria-label="站点页脚">
-      <a href="/thanks/">特别鸣谢</a>
+    <nav class="leeao-footer__links" aria-label="{{ if $isHant }}網站頁尾{{ else }}站点页脚{{ end }}">
+      {{ if not $isHant }}
+        <a href="/thanks/">特别鸣谢</a>
+      {{ end }}
 
       {{ if .IsHome }}
         <input class="leeao-feedback__toggle" type="checkbox" id="leeao-spark-toggle" />
         <label class="leeao-footer__button" for="leeao-spark-toggle">加入群聊</label>
 
         <div class="leeao-feedback leeao-feedback--spark" aria-hidden="true">
-          <label class="leeao-feedback__backdrop" for="leeao-spark-toggle" aria-label="关闭加入群聊"></label>
+          <label class="leeao-feedback__backdrop" for="leeao-spark-toggle" aria-label="{{ if $isHant }}關閉加入群聊{{ else }}关闭加入群聊{{ end }}"></label>
           <div class="leeao-feedback__dialog" role="dialog" aria-modal="true" aria-labelledby="leeao-spark-title">
-            <label class="leeao-feedback__close" for="leeao-spark-toggle" aria-label="关闭">×</label>
+            <label class="leeao-feedback__close" for="leeao-spark-toggle" aria-label="{{ if $isHant }}關閉{{ else }}关闭{{ end }}">×</label>
             <h2 id="leeao-spark-title">加入群聊</h2>
-            <p>扫码加入李敖星火群聊。</p>
-            <img src="/images/%E6%9D%8E%E6%95%96%E6%98%9F%E7%81%AB.jpg" alt="李敖星火群聊二维码" loading="lazy" />
+            <p>{{ if $isHant }}掃碼加入李敖星火群聊。{{ else }}扫码加入李敖星火群聊。{{ end }}</p>
+            <img src="/images/%E6%9D%8E%E6%95%96%E6%98%9F%E7%81%AB.jpg" alt="{{ if $isHant }}李敖星火群聊二維碼{{ else }}李敖星火群聊二维码{{ end }}" loading="lazy" />
           </div>
         </div>
       {{ end }}
 
       <input class="leeao-feedback__toggle" type="checkbox" id="leeao-feedback-toggle" />
-      <label class="leeao-footer__button" for="leeao-feedback-toggle">故障反馈</label>
+      <label class="leeao-footer__button" for="leeao-feedback-toggle">{{ if $isHant }}故障反饋{{ else }}故障反馈{{ end }}</label>
 
       <div class="leeao-feedback leeao-feedback--feedback" aria-hidden="true">
-        <label class="leeao-feedback__backdrop" for="leeao-feedback-toggle" aria-label="关闭故障反馈"></label>
+        <label class="leeao-feedback__backdrop" for="leeao-feedback-toggle" aria-label="{{ if $isHant }}關閉故障反饋{{ else }}关闭故障反馈{{ end }}"></label>
         <div class="leeao-feedback__dialog" role="dialog" aria-modal="true" aria-labelledby="leeao-feedback-title">
-          <label class="leeao-feedback__close" for="leeao-feedback-toggle" aria-label="关闭">×</label>
-          <h2 id="leeao-feedback-title">故障反馈</h2>
-          <p>遇到链接失效、内容错误或显示异常，可扫码加入 QQ 群反馈。</p>
-          <img src="/images/qq-group.jpg" alt="故障反馈 QQ 群二维码" loading="lazy" />
+          <label class="leeao-feedback__close" for="leeao-feedback-toggle" aria-label="{{ if $isHant }}關閉{{ else }}关闭{{ end }}">×</label>
+          <h2 id="leeao-feedback-title">{{ if $isHant }}故障反饋{{ else }}故障反馈{{ end }}</h2>
+          <p>{{ if $isHant }}遇到連結失效、內容錯誤或顯示異常，可掃碼加入 QQ 群反饋。{{ else }}遇到链接失效、内容错误或显示异常，可扫码加入 QQ 群反馈。{{ end }}</p>
+          <img src="/images/qq-group.jpg" alt="{{ if $isHant }}故障反饋 QQ 群二維碼{{ else }}故障反馈 QQ 群二维码{{ end }}" loading="lazy" />
         </div>
       </div>
     </nav>

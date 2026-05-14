@@ -2,7 +2,7 @@
   type="button"
   class="leeao-variant-toggle"
   data-variant-toggle
-  aria-label="简繁切换"
-  title="简繁切换">
+  aria-label="{{ if eq (lower .Site.Language.Locale) "zh-hant" }}簡繁切換{{ else }}简繁切换{{ end }}"
+  title="{{ if eq (lower .Site.Language.Locale) "zh-hant" }}簡繁切換{{ else }}简繁切换{{ end }}">
   繁
 </button>

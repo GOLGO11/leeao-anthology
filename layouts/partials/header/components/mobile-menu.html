@@ -57,10 +57,11 @@
     {{ if .HasChildren }}
       {{ range .Children }}
         {{ $isExternal := or (strings.HasPrefix .URL "http:" ) (strings.HasPrefix .URL "https:" ) }}
+        {{ $newWindowLabel := cond (eq (lower site.Language.Locale) "zh-hant") "，新視窗" "，新窗口" }}
         <div class="px-2">
           <a
             href="{{ .URL }}"
-            {{ with or .Name .Pre }}aria-label="{{ . | plainify }}{{ if $isExternal }}，新窗口{{ end }}"{{ end }}
+            {{ with or .Name .Pre }}aria-label="{{ . | plainify }}{{ if $isExternal }}{{ $newWindowLabel }}{{ end }}"{{ end }}
             {{ if $isExternal }}
               target="_blank"
             {{ end }}
