@@ -161,10 +161,16 @@ parent = "projects"
 weight = 90
 
 [[languages.zh-Hant.menus.main]]
-name = "大李敖全集在線版"
+name = "大李敖全集在線版（海外）"
 url = "https://books.leeao.net/"
 parent = "projects"
 weight = 100
+
+[[languages.zh-Hant.menus.main]]
+name = "大李敖全集在線版（海內）"
+url = "https://books.leeaoweb.com/"
+parent = "projects"
+weight = 105
 
 [[languages.zh-Hant.menus.main]]
 name = "大李敖全集電子書"
@@ -256,10 +262,16 @@ parent = "projects"
 weight = 90
 
 [[menus.main]]
-name = "大李敖全集在线版"
+name = "大李敖全集在线版（海外）"
 url = "https://books.leeao.net/"
 parent = "projects"
 weight = 100
+
+[[menus.main]]
+name = "大李敖全集在线版（海内）"
+url = "https://books.leeaoweb.com/"
+parent = "projects"
+weight = 105
 
 [[menus.main]]
 name = "大李敖全集电子书"
