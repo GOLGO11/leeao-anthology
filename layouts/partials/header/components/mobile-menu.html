@@ -54,6 +54,41 @@
 
 {{ define "mobile-main-menu" }}
   {{ with .Site.Menus.main }}
+    {{ $hasStandalone := false }}
+    {{ range . }}
+      {{ if not .HasChildren }}
+        {{ $hasStandalone = true }}
+      {{ end }}
+    {{ end }}
+    {{ if $hasStandalone }}
+      <section class="mobile-page-menu" aria-label="{{ if eq (lower site.Language.Locale) "zh-hant" }}主要頁面{{ else }}主要页面{{ end }}">
+        <div>
+          {{ range . }}
+            {{ if not .HasChildren }}
+              {{ $isExternal := or (strings.HasPrefix .URL "http:" ) (strings.HasPrefix .URL "https:" ) }}
+              {{ $newWindowLabel := cond (eq (lower site.Language.Locale) "zh-hant") "，新視窗" "，新窗口" }}
+              <a
+                href="{{ .URL }}"
+                {{ with or .Name .Pre }}aria-label="{{ . | plainify }}{{ if $isExternal }}{{ $newWindowLabel }}{{ end }}"{{ end }}
+                {{ if $isExternal }}
+                  target="_blank"
+                {{ end }}
+                class="group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
+                {{ if .Pre }}
+                  <span>
+                    {{ partial "icon.html" .Pre }}
+                  </span>
+                {{ end }}
+                <span title="{{ .Title }}">
+                  {{ .Name | markdownify }}
+                </span>
+              </a>
+            {{ end }}
+          {{ end }}
+        </div>
+      </section>
+    {{ end }}
+
     <section class="mobile-project-menu" aria-label="{{ if eq (lower site.Language.Locale) "zh-hant" }}項目入口{{ else }}项目入口{{ end }}">
       {{ range . }}
         {{ if .HasChildren }}

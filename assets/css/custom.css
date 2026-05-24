@@ -423,6 +423,154 @@ html:not(.dark) body::before {
   line-height: 1.75;
 }
 
+.project-status {
+  max-width: 68rem;
+}
+
+.project-status__hero {
+  margin-bottom: 2rem;
+}
+
+.project-status h1 {
+  position: relative;
+  margin: 0 0 1.25rem;
+  color: #16120e;
+  font-size: clamp(2.75rem, 5vw, 4.7rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.project-status h1::after {
+  display: block;
+  width: 4.5rem;
+  height: 4px;
+  margin-top: 0.7rem;
+  content: "";
+  background: #9f2f2f;
+}
+
+.project-status__intro {
+  max-width: 48rem;
+  color: #4d4438;
+  line-height: 1.85;
+}
+
+.project-status__updated {
+  margin: 1rem 0 0.75rem;
+  color: #7b2a25;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.project-status__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.status-groups {
+  display: grid;
+  gap: 1.35rem;
+}
+
+.status-group {
+  border: 1px solid rgba(74, 59, 43, 0.13);
+  border-radius: 8px;
+  background: rgba(255, 253, 248, 0.72);
+  box-shadow: 0 12px 26px rgba(52, 43, 32, 0.05);
+  overflow: hidden;
+}
+
+.status-group h2 {
+  margin: 0;
+  padding: 1rem 1.1rem;
+  border-left: 4px solid #9f2f2f;
+  color: #16120e;
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+
+.status-table-wrap {
+  overflow: visible;
+}
+
+.status-table {
+  width: 100%;
+  min-width: 0;
+  border-collapse: collapse;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  font-size: 0.9rem;
+}
+
+.status-table th,
+.status-table td {
+  padding: 0.78rem 0.85rem;
+  border-top: 1px solid rgba(74, 59, 43, 0.1);
+  color: #3f372e;
+  line-height: 1.55;
+  text-align: left;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+
+.status-table th {
+  background: rgba(159, 47, 47, 0.06);
+  color: #211d18;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.status-table a {
+  color: #7b2a25;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.status-table a:hover {
+  text-decoration: underline;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.8rem;
+  padding: 0.16rem 0.55rem;
+  border: 1px solid rgba(74, 59, 43, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 253, 248, 0.88);
+  color: #5a5045;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.status-badge--stable {
+  border-color: rgba(42, 116, 77, 0.22);
+  background: rgba(42, 116, 77, 0.09);
+  color: #246747;
+}
+
+.status-badge--maintenance {
+  border-color: rgba(159, 47, 47, 0.2);
+  background: rgba(159, 47, 47, 0.08);
+  color: #7b2a25;
+}
+
+.status-badge--temporary {
+  border-color: rgba(160, 87, 20, 0.22);
+  background: rgba(160, 87, 20, 0.1);
+  color: #884b12;
+}
+
+.status-badge--external {
+  border-color: rgba(72, 83, 120, 0.22);
+  background: rgba(72, 83, 120, 0.09);
+  color: #414b73;
+}
+
 #site-footer {
   margin-top: 3rem;
   border-top: 1px solid rgba(74, 59, 43, 0.12);
@@ -617,6 +765,33 @@ html:not(.dark) body::before {
     padding-top: 0.35rem;
   }
 
+  .mobile-page-menu {
+    padding: 0.35rem 0 0.85rem;
+    border-bottom: 1px solid rgba(74, 59, 43, 0.12);
+  }
+
+  .mobile-page-menu > div {
+    display: grid;
+    gap: 0.35rem;
+  }
+
+  .mobile-page-menu a {
+    display: flex;
+    align-items: center;
+    min-height: 2.75rem;
+    padding: 0.5rem 0.55rem;
+    border-radius: 8px;
+    color: #16120e;
+    font-size: 1.14rem;
+    font-weight: 800;
+    line-height: 1.35;
+  }
+
+  .mobile-page-menu a:hover,
+  .mobile-page-menu a:focus {
+    background: rgba(159, 47, 47, 0.08);
+  }
+
   .mobile-project-menu h2 {
     margin: 0 0 0.8rem;
     padding-inline: 0.55rem;
@@ -693,6 +868,52 @@ html:not(.dark) body::before {
 
   .project-museum h1 {
     font-size: 2.25rem;
+  }
+
+  .project-status h1 {
+    font-size: 2.25rem;
+  }
+
+  .status-table-wrap {
+    overflow: visible;
+  }
+
+  .status-table,
+  .status-table thead,
+  .status-table tbody,
+  .status-table tr,
+  .status-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .status-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  .status-table tr {
+    padding: 0.9rem 1rem;
+    border-top: 1px solid rgba(74, 59, 43, 0.1);
+  }
+
+  .status-table td {
+    display: grid;
+    grid-template-columns: minmax(5.5rem, 32%) minmax(0, 1fr);
+    gap: 0.75rem;
+    padding: 0.38rem 0;
+    border-top: 0;
+  }
+
+  .status-table td::before {
+    content: attr(data-label);
+    color: #7b2a25;
+    font-weight: 800;
+    white-space: nowrap;
   }
 
   .project-group {

@@ -1,0 +1,69 @@
+{{ define "main" }}
+  {{ $isHant := eq (lower .Site.Language.Locale) "zh-hant" }}
+  {{ $statusData := hugo.Data.status }}
+  {{ if $isHant }}
+    {{ $statusData = hugo.Data.status_hant }}
+  {{ end }}
+  {{ $newWindowLabel := cond $isHant "，新視窗" "，新窗口" }}
+  <article class="project-status" aria-labelledby="project-status-title">
+    <header class="project-status__hero">
+      <p class="project-museum__eyebrow">Project Status</p>
+      <h1 id="project-status-title">{{ .Title }}</h1>
+      <div class="project-status__intro">
+        {{ .Content }}
+      </div>
+      <p class="project-status__updated">
+        {{ if $isHant }}最近核對：{{ else }}最近核对：{{ end }}{{ $statusData.updated }}
+      </p>
+      <div class="project-status__legend" aria-label="{{ if $isHant }}狀態說明{{ else }}状态说明{{ end }}">
+        {{ range $key, $label := $statusData.legend }}
+          <span class="status-badge status-badge--{{ $key }}">{{ $label }}</span>
+        {{ end }}
+      </div>
+    </header>
+
+    <div class="status-groups">
+      {{ range $statusData.groups }}
+        <section class="status-group" aria-labelledby="{{ printf "status-%s" (.title | anchorize) }}">
+          <h2 id="{{ printf "status-%s" (.title | anchorize) }}">{{ .title }}</h2>
+          <div class="status-table-wrap">
+            <table class="status-table">
+              <thead>
+                <tr>
+                  <th>{{ if $isHant }}子項目{{ else }}子项目{{ end }}</th>
+                  <th>{{ if $isHant }}狀態{{ else }}状态{{ end }}</th>
+                  <th>{{ if $isHant }}國內{{ else }}国内{{ end }}</th>
+                  <th>{{ if $isHant }}海外{{ else }}海外{{ end }}</th>
+                  <th>{{ if $isHant }}資料來源{{ else }}数据来源{{ end }}</th>
+                  <th>{{ if $isHant }}更新時間{{ else }}更新时间{{ end }}</th>
+                  <th>{{ if $isHant }}備註{{ else }}备注{{ end }}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {{ range .items }}
+                  {{ $isExternal := or (strings.HasPrefix .url "http://") (strings.HasPrefix .url "https://") }}
+                  <tr>
+                    <td data-label="{{ if $isHant }}子項目{{ else }}子项目{{ end }}">
+                      <a
+                        href="{{ .url }}"
+                        {{ if $isExternal }}target="_blank" rel="noopener noreferrer"{{ end }}
+                        aria-label="{{ .name }}{{ if $isExternal }}{{ $newWindowLabel }}{{ end }}">
+                        {{ .name }}
+                      </a>
+                    </td>
+                    <td data-label="{{ if $isHant }}狀態{{ else }}状态{{ end }}"><span class="status-badge status-badge--{{ .level }}">{{ .status }}</span></td>
+                    <td data-label="{{ if $isHant }}國內{{ else }}国内{{ end }}">{{ .mainland }}</td>
+                    <td data-label="{{ if $isHant }}海外{{ else }}海外{{ end }}">{{ .overseas }}</td>
+                    <td data-label="{{ if $isHant }}資料來源{{ else }}数据来源{{ end }}">{{ .source }}</td>
+                    <td data-label="{{ if $isHant }}更新時間{{ else }}更新时间{{ end }}">{{ .checked }}</td>
+                    <td data-label="{{ if $isHant }}備註{{ else }}备注{{ end }}">{{ .note }}</td>
+                  </tr>
+                {{ end }}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      {{ end }}
+    </div>
+  </article>
+{{ end }}
