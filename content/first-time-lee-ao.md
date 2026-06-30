@@ -44,7 +44,7 @@ sitemap:
 
 1. 第 1 天：读这页和 [李敖为什么重要](/why-lee-ao-matters/)。
 2. 第 2 天：走一遍 [交互式年表](https://life.leeaoweb.com/)。
-3. 第 3 天：用 [人物关系图](https://relation.leeaoweb.com/)、[地理记忆地图](https://map.leeaoweb.com/) 和 [李敖人生智慧](https://wisdom.leeaoweb.com/) 建立人物、地点与主题线索。
+3. 第 3 天：用 [人物关系图](https://relation.leeaoweb.com/)、[地理记忆地图](https://map.leeaoweb.com/)、[李敖思想与智慧](https://wisdom.leeaoweb.com/)、[李敖讲故事](https://story.leeaoweb.com/) 和 [李敖引用诗文格言](https://poem.leeaoweb.com/) 建立人物、地点与主题线索。
 4. 第 4 天：读 [李敖研究资料集刊](/posts/) 中的代表材料。
 5. 第 5 天：进入全集，选一个主题连续读原文。
 6. 第 6 天：看视频、听音频，观察公共表达和文字表达的不同。

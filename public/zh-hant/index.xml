@@ -1,1 +1,53 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>李敖數字博物館</title><link>https://leeaoweb.com/zh-hant/</link><description>Recent content on 李敖數字博物館</description><generator>Hugo -- gohugo.io</generator><language>zh-Hant</language><copyright>© 2026 山櫻</copyright><atom:link href="https://leeaoweb.com/zh-hant/index.xml" rel="self" type="application/rss+xml"/><item><title>李敖為什麼重要</title><link>https://leeaoweb.com/zh-hant/why-lee-ao-matters/</link><pubDate>Sun, 24 May 2026 00:00:00 +0000</pubDate><guid>https://leeaoweb.com/zh-hant/why-lee-ao-matters/</guid><description>李敖的重要性不應寫成粉絲讚歌，而應放回中文寫作、出版、公共表達和爭議歷史中判斷。</description></item><item><title>第一次認識李敖</title><link>https://leeaoweb.com/zh-hant/first-time-lee-ao/</link><pubDate>Sun, 24 May 2026 00:00:00 +0000</pubDate><guid>https://leeaoweb.com/zh-hant/first-time-lee-ao/</guid><description>用四種時間尺度認識李敖：先建立輪廓，再進入年表、文章、視頻與全集。</description></item><item><title>項目狀態</title><link>https://leeaoweb.com/zh-hant/project-status/</link><pubDate>Sun, 24 May 2026 00:00:00 +0000</pubDate><guid>https://leeaoweb.com/zh-hant/project-status/</guid><description>查看各子項目是否穩定、維護中、國內可用或海外可用，避免把單個入口故障誤認為整個項目不可用。</description></item><item><title>特別鳴謝</title><link>https://leeaoweb.com/zh-hant/thanks/</link><pubDate>Wed, 06 May 2026 00:00:00 +0000</pubDate><guid>https://leeaoweb.com/zh-hant/thanks/</guid><description>&lt;p&gt;鳴謝 &lt;strong&gt;不自由的自由&lt;/strong&gt; 以及 &lt;strong&gt;谷法天凜垰&lt;/strong&gt;。&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>李敖數字博物館</title>
+    <link>http://localhost:1313/zh-hant/</link>
+    <description>Recent content on 李敖數字博物館</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-Hant</language>
+    <copyright>© 2026 山櫻</copyright>
+    <atom:link href="http://localhost:1313/zh-hant/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>李敖為什麼重要</title>
+      <link>http://localhost:1313/zh-hant/why-lee-ao-matters/</link>
+      <pubDate>Sun, 24 May 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/zh-hant/why-lee-ao-matters/</guid>
+      <description>李敖的重要性不應寫成粉絲讚歌，而應放回中文寫作、出版、公共表達和爭議歷史中判斷。</description>
+      
+    </item>
+    
+    <item>
+      <title>第一次認識李敖</title>
+      <link>http://localhost:1313/zh-hant/first-time-lee-ao/</link>
+      <pubDate>Sun, 24 May 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/zh-hant/first-time-lee-ao/</guid>
+      <description>用四種時間尺度認識李敖：先建立輪廓，再進入年表、文章、視頻與全集。</description>
+      
+    </item>
+    
+    <item>
+      <title>項目狀態</title>
+      <link>http://localhost:1313/zh-hant/project-status/</link>
+      <pubDate>Sun, 24 May 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/zh-hant/project-status/</guid>
+      <description>查看各子項目是否穩定、維護中、國內可用或海外可用，避免把單個入口故障誤認為整個項目不可用。</description>
+      
+    </item>
+    
+    <item>
+      <title>特別鳴謝</title>
+      <link>http://localhost:1313/zh-hant/thanks/</link>
+      <pubDate>Wed, 06 May 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/zh-hant/thanks/</guid>
+      <description>&lt;p&gt;鳴謝 &lt;strong&gt;不自由的自由&lt;/strong&gt; 以及 &lt;strong&gt;谷法天凜垰&lt;/strong&gt;。&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

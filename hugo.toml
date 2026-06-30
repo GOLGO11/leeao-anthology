@@ -33,7 +33,7 @@ mainSections = ["posts"]
 enableSearch = true
 enableCodeCopy = false
 disableTextInHeader = false
-description = "李敖数字博物馆汇总李敖研究资料集刊、大李敖全集、交互式年表、人物关系图、地理记忆地图、李敖人生智慧、图片库、视频库、音频库、AI 李敖与历史网站镜像。"
+description = "李敖数字博物馆汇总李敖研究资料集刊、大李敖全集、互动工具、主题项目、媒体库、AI 李敖与历史网站镜像。"
 robots = "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
 images = ["/uploads/liao.jpeg"]
 
@@ -83,7 +83,7 @@ title = "李敖数字博物馆"
 displayName = "简体中文"
 isoCode = "zh-CN"
 dateFormat = "2006-01-02"
-description = "李敖数字博物馆汇总李敖研究资料集刊、大李敖全集、交互式年表、人物关系图、地理记忆地图、李敖人生智慧、图片库、视频库、音频库、AI 李敖与历史网站镜像。"
+description = "李敖数字博物馆汇总李敖研究资料集刊、大李敖全集、互动工具、主题项目、媒体库、AI 李敖与历史网站镜像。"
 
 [languages.zh-Hant]
 locale = "zh-Hant"
@@ -96,7 +96,7 @@ contentDir = "content/zh-hant"
 displayName = "繁體中文"
 isoCode = "zh-Hant"
 dateFormat = "2006-01-02"
-description = "李敖數字博物館彙總李敖研究資料集刊、大李敖全集、互動式年表、人物關係圖、地理記憶地圖、李敖人生智慧、圖片庫、視頻庫、音頻庫、AI 李敖與歷史網站鏡像。"
+description = "李敖數字博物館彙總李敖研究資料集刊、大李敖全集、互動工具、主題項目、媒體庫、AI 李敖與歷史網站鏡像。"
 
 [languages.zh-Hant.params.author]
 name = "山櫻"
@@ -140,10 +140,22 @@ parent = "projects"
 weight = 30
 
 [[languages.zh-Hant.menus.main]]
-name = "李敖人生智慧"
+name = "李敖思想與智慧"
 url = "https://wisdom.leeaoweb.com/"
 parent = "projects"
 weight = 35
+
+[[languages.zh-Hant.menus.main]]
+name = "李敖講故事"
+url = "https://story.leeaoweb.com/"
+parent = "projects"
+weight = 36
+
+[[languages.zh-Hant.menus.main]]
+name = "李敖引用詩文格言"
+url = "https://poem.leeaoweb.com/"
+parent = "projects"
+weight = 37
 
 [[languages.zh-Hant.menus.main]]
 name = "李敖研究資料集刊"
@@ -340,10 +352,22 @@ parent = "projects"
 weight = 30
 
 [[menus.main]]
-name = "李敖人生智慧"
+name = "李敖思想与智慧"
 url = "https://wisdom.leeaoweb.com/"
 parent = "projects"
 weight = 35
+
+[[menus.main]]
+name = "李敖讲故事"
+url = "https://story.leeaoweb.com/"
+parent = "projects"
+weight = 36
+
+[[menus.main]]
+name = "李敖引用诗文格言"
+url = "https://poem.leeaoweb.com/"
+parent = "projects"
+weight = 37
 
 [[menus.main]]
 name = "AI李敖海外版"
