@@ -34,6 +34,15 @@ groups:
         source: "李敖相关地点与事件整理"
         checked: "2026-05-24"
         note: "新入口，持续补资料"
+      - name: "李敖人生智慧"
+        url: "https://wisdom.leeaoweb.com/"
+        status: "稳定"
+        level: "stable"
+        mainland: "可用"
+        overseas: "可用"
+        source: "李敖相关文本主题整理"
+        checked: "2026-06-30"
+        note: "人生智慧主题入口"
 
   - title: "研究资料"
     items:

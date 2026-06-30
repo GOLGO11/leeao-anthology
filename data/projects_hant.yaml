@@ -14,6 +14,10 @@ groups:
         url: "https://map.leeaoweb.com/"
         tag: "地圖"
         description: "以地理記憶地圖方式進入李敖相關地點與資料。"
+      - name: "李敖人生智慧"
+        url: "https://wisdom.leeaoweb.com/"
+        tag: "智慧"
+        description: "以主題方式瀏覽李敖文本中的人生判斷與觀點。"
 
   - title: "研究資料"
     description: "集刊、叢書、書目圖錄與研究資料入口。"
