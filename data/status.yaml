@@ -1,4 +1,4 @@
-updated: "2026-06-30"
+updated: "2026-07-29"
 legend:
   stable: "稳定"
   maintenance: "维护中"
@@ -220,3 +220,12 @@ groups:
         source: "本站发布说明"
         checked: "2026-05-24"
         note: "应用数据与代码曾重建"
+      - name: "与敖同行网页版"
+        url: "https://together.leeaoweb.com/"
+        status: "稳定"
+        level: "stable"
+        mainland: "可用"
+        overseas: "可用"
+        source: "与敖同行网页端"
+        checked: "2026-07-29"
+        note: "网页端入口"

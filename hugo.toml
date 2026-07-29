@@ -253,6 +253,12 @@ url = "https://leeaoweb.com/posts/%E4%B8%8E%E6%95%96%E5%90%8C%E8%A1%8C%E5%AE%89%
 parent = "projects"
 weight = 180
 
+[[languages.zh-Hant.menus.main]]
+name = "與敖同行網頁版"
+url = "https://together.leeaoweb.com/"
+parent = "projects"
+weight = 185
+
 [[menus.main]]
 name = "第一次认识"
 url = "/first-time-lee-ao/"
@@ -404,3 +410,9 @@ name = "与敖同行 APP"
 url = "https://leeaoweb.com/posts/%E4%B8%8E%E6%95%96%E5%90%8C%E8%A1%8C%E5%AE%89%E5%8D%93%E7%89%88app-1-0-0-%E5%8F%91%E5%B8%83/"
 parent = "projects"
 weight = 180
+
+[[menus.main]]
+name = "与敖同行网页版"
+url = "https://together.leeaoweb.com/"
+parent = "projects"
+weight = 185
