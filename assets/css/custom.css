@@ -328,6 +328,32 @@ html:not(.dark) body::before {
   gap: 1.8rem;
 }
 
+.resource-donation {
+  margin-top: 2.6rem;
+  padding: 1rem 1.2rem;
+  border-top: 1px solid rgba(159, 47, 47, 0.28);
+  border-bottom: 1px solid rgba(74, 59, 43, 0.12);
+  color: #655b50;
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+.resource-donation p {
+  margin: 0;
+}
+
+.resource-donation a {
+  color: #7b2a25;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  font-weight: 700;
+  text-decoration-color: rgba(159, 47, 47, 0.42);
+  text-underline-offset: 0.16em;
+}
+
+.resource-donation a:hover {
+  color: #9f2f2f;
+}
+
 .project-group {
   display: grid;
   grid-template-columns: minmax(0, 13rem) minmax(0, 1fr);

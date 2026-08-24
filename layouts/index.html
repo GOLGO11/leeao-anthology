@@ -41,5 +41,12 @@
         </section>
       {{ end }}
     </div>
+
+    <aside class="resource-donation" aria-label="{{ if $isHant }}資源捐贈聯繫方式{{ else }}资源捐献联系方式{{ end }}">
+      <p>
+        {{ if $isHant }}有意願捐贈李敖相關資源的朋友，請聯繫電郵{{ else }}有意愿捐献李敖相关资源的朋友请联系邮箱{{ end }}
+        <a href="mailto:gaotianhao643@gmail.com">gaotianhao643@gmail.com</a>
+      </p>
+    </aside>
   </article>
 {{ end }}
